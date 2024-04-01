@@ -50,6 +50,8 @@ npm i ejs
 npm run devStart
 ```
 ### MySQL Command Line client / MySQL Workbench
+Chạy lệnh `npm run demoMySQL` để chạy demo MySQL
+
 1. Download installer từ link https://dev.mysql.com/downloads/installer/
 2. Chạy file `.msi` và chọn `Custom` type.
 3. Trong `Select Products and Fetures`, mở rộng option `MySQL Server` và bỏ chọn các server components.
@@ -70,7 +72,11 @@ Các câu lệnh cơ bản có thể xem ở link: https://dev.mysql.com/doc/mys
 
 ### MongoDB 
 
+Chạy lệnh `npm run demoMongoDB` để chạy demo mongodb
+
 ### PostgreSQL
+
+Chạy lệnh `npm run demoPostgreSQL` để chạy 
 
 ## Trình bày
 

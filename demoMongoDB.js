@@ -9,18 +9,17 @@ db.once('open', function(callback){
     console.log("connection succeeded");
 })
  
-var app=express()
- 
- 
+var app=express();
 app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(express.static(__dirname));
 
 app.post('/sign_up', function(req,res){
     var fullname = req.body.fullname;
-    var email =req.body.email;
+    var email = req.body.email;
     var username =req.body.username;
     var password = req.body.password;
  
@@ -33,12 +32,10 @@ app.post('/sign_up', function(req,res){
 
     db.collection('accounts').insertOne(data,function(err, collection){
         if (err) throw err;
-        console.log("Record inserted Successfully");
-        alert("Signup successfully.")
-             
+        console.log("Record inserted Successfully");      
     });
          
-    return res.redirect('signup_success.html');
+    return res.status(200).send("Signup successfully");
 })
 
 
@@ -48,17 +45,19 @@ app.post('/sign_in', function(req,res){
  
     var data = {
         "username": username,
-        "password": password
     }
 
-    db.collection('accounts').findOne(data,function(err, collection){
+    db.collection('accounts').findOne(data,function(err, user){
         if (err) throw err;
-        console.log("Record inserted Successfully");
-        alert("Signup successfully.")
-             
+        if (!user) {
+            console.log("User not found");
+            return res.status(404).send("User not found");
+        }
+        if ( user.password == password){
+            console.log("Login successfully");
+            return res.status(200).send("Hello ", username);
+        }
     });
-         
-    return res.redirect('signup_success.html');
 })
 
 

@@ -4,15 +4,17 @@
   "description": "**Nhóm thực hiện**: Nhóm 8 \r **Thành viên**:\r 1. Nguyễn Thị Quỳnh Anh (Nhóm trưởng)\r 2. Nguyễn Trần Lan Phương\r 3. Võ Đặng Phương Thùy",
   "main": "index.js",
   "scripts": {
-    "demoMongoDB" : "node demoMongoDB.js",
-    "demoMySQL" : "node demoMySQL.js",
-    "demoPostgreSQL" : "node demoPostgreSQL.js"
+    "demoMongoDB": "node demoMongoDB.js",
+    "demoMySQL": "node demoMySQL.js",
+    "demoPostgreSQL": "node demoPostgreSQL.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mongoose": "^8.2.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

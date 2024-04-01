@@ -5,20 +5,103 @@
     <title>Handmade Forum Intro Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style> 
-    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        legend {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .btn {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #005f78;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .signin-form-container,
+        .signup-form-container {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <div id="container">
-        <header> <h1>DEMO</h1> </header>
+        <header>
+            <h1>DEMO</h1>
+        </header>
         <div class="signup-form-container">
             <!-- Sign up form -->
             <form id="signupForm" method="post">
                 <button id="closeButton" class="close-button" style="display: block;">X</button> <!-- Nút thoát -->
                 <!-- Các trường nhập liệu trong form -->
-                <legend><h1><center>Sign up</center></h1></legend>
+                <legend>
+                    <h1>
+                        <center>Sign up</center>
+                    </h1>
+                </legend>
                 <label for="fullname">Full Name</label>
                 <input type="text" id="fullname" name="fullname"><br>
                 <label for="signupEmail">Email: </label>
@@ -41,7 +124,11 @@
             <!-- Sign in form -->
             <form id="signinForm">
                 <button id="closeButton" class="close-button" style="display: block;">X</button> <!-- Nút thoát -->
-                <legend><h1><center>Sign in</center></h1></legend>
+                <legend>
+                    <h1>
+                        <center>Sign in</center>
+                    </h1>
+                </legend>
                 <label for="signinUsername">User name: </label>
                 <input type="text" id="signinUsername" name="username"><br>
                 <label for="signinPassword">Password: </label>
@@ -64,24 +151,23 @@
     var signIn = document.querySelector(".signin-form-container");
     function ShowSignIn() {
         signIn.style.display = 'block';
-        signUp.style.display = 'none'; 
+        signUp.style.display = 'none';
 
     }
     function ShowSignUp() {
         signIn.style.display = 'none';
-        signUp.style.display = 'block'; 
+        signUp.style.display = 'block';
     }
-    document.getElementById("sign-up-btn").addEventListener('click', ()=>
-    {
+    document.getElementById("sign-up-btn").addEventListener('click', () => {
         ShowSignUp()
     }
     );
-    document.getElementById("sign-in-btn").addEventListener('click', ()=>
-    {
+    document.getElementById("sign-in-btn").addEventListener('click', () => {
         ShowSignIn()
     }
     );
 
 
 </script>
+
 </html>

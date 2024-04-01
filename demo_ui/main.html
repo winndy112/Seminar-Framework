@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vn">
+
+<head>
+    <title>Handmade Forum Intro Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style> 
+    
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header> <h1>DEMO</h1> </header>
+        <div class="signup-form-container">
+            <!-- Sign up form -->
+            <form id="signupForm" method="post">
+                <button id="closeButton" class="close-button" style="display: block;">X</button> <!-- Nút thoát -->
+                <!-- Các trường nhập liệu trong form -->
+                <legend><h1><center>Sign up</center></h1></legend>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname"><br>
+                <label for="signupEmail">Email: </label>
+                <input type="text" id="signupEmail" name="email"><br>
+                <label for="signupUsername">User name: </label>
+                <input type="text" id="signupUsername" name="username"><br>
+                <label for="signupPassword">Password: </label>
+                <input type="password" id="signupPassword" name="password"><br>
+                <br>
+                <center><input type="submit" value="Submit"><br></center>
+            </form>
+            <center>
+                <p>You already have an account?</p>
+                <button id="sign-in-btn" class="btn">
+                    Sign in
+                </button>
+            </center>
+        </div>
+        <div class="signin-form-container" style="display: none;">
+            <!-- Sign in form -->
+            <form id="signinForm">
+                <button id="closeButton" class="close-button" style="display: block;">X</button> <!-- Nút thoát -->
+                <legend><h1><center>Sign in</center></h1></legend>
+                <label for="signinUsername">User name: </label>
+                <input type="text" id="signinUsername" name="username"><br>
+                <label for="signinPassword">Password: </label>
+                <input type="text" id="signinPassword" name="password"><br>
+                <a href="#" style="float:right; text-decoration: none;">Forgot Password?</a><br>
+                <br>
+                <center><input type="submit" value="Submit"><br></center>
+            </form>
+            <center>
+                <p>Create a new account?</p>
+                <button id="sign-up-btn" class="btn">
+                    Sign up
+                </button>
+            </center>
+        </div>
+    </div>
+</body>
+<script>
+    var signUp = document.querySelector(".signup-form-container");
+    var signIn = document.querySelector(".signin-form-container");
+    function ShowSignIn() {
+        signIn.style.display = 'block';
+        signUp.style.display = 'none'; 
+
+    }
+    function ShowSignUp() {
+        signIn.style.display = 'none';
+        signUp.style.display = 'block'; 
+    }
+    document.getElementById("sign-up-btn").addEventListener('click', ()=>
+    {
+        ShowSignUp()
+    }
+    );
+    document.getElementById("sign-in-btn").addEventListener('click', ()=>
+    {
+        ShowSignIn()
+    }
+    );
+
+
+</script>
+</html>

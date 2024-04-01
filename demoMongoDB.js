@@ -30,14 +30,39 @@ app.post('/sign_up', function(req,res){
         "username": username,
         "password": password
     }
-db.collection('accounts').insertOne(data,function(err, collection){
+
+    db.collection('accounts').insertOne(data,function(err, collection){
         if (err) throw err;
         console.log("Record inserted Successfully");
+        alert("Signup successfully.")
              
     });
          
-    // return res.redirect('signup_success.html');
+    return res.redirect('signup_success.html');
 })
+
+
+app.post('/sign_in', function(req,res){
+    var username =req.body.username;
+    var password = req.body.password;
+ 
+    var data = {
+        "username": username,
+        "password": password
+    }
+
+    db.collection('accounts').findOne(data,function(err, collection){
+        if (err) throw err;
+        console.log("Record inserted Successfully");
+        alert("Signup successfully.")
+             
+    });
+         
+    return res.redirect('signup_success.html');
+})
+
+
+
 
 app.get('/',function(req,res){
     res.set({

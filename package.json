@@ -12,14 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "express": "^4.19.2",
-    "pg-promise": "^11.5.5"
-=======
+    "pg-promise": "^11.5.5",
     "body-parser": "^1.20.2",
-    "express": "^4.19.2",
     "mongoose": "^8.2.4"
->>>>>>> 66c61825e1d24c383fce3da331639e1d40393a04
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

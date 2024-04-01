@@ -15,7 +15,6 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(express.static(__dirname));
 
 app.post('/sign_up', function(req,res){
     var fullname = req.body.fullname;
@@ -55,17 +54,14 @@ app.post('/sign_in', function(req,res){
         }
         if ( user.password == password){
             console.log("Login successfully");
-            return res.status(200).send("Hello ", username);
+            return res.status(200).send("Hello " + username);
         }
     });
 })
-
-
-
 
 app.get('/',function(req,res){
     res.set({
         'Access-control-Allow-Origin': '*'
     });
-    return res.redirect('main.html');
+    return res.redirect('demo_ui/signup.html');
 }).listen(3000)

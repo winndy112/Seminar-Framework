@@ -2,19 +2,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Handmade Forum Sign In Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 <body>
     <div id="container">
         <header>
             <h1>DEMO</h1>
         </header>
-        <div class="signin-form-container" style="display: block;">
+        <div class="signin-form-container" action="sign_in" style="display: block;">
             <!-- Sign in form -->
-            <form id="signinForm" action="http://localhost:3000/sign_in" method="post">
+            <form id="signinForm"  method="post">
                 <button id="closeButton" class="close-button" style="display: block;">X</button> <!-- Nút thoát -->
                 <legend>
                     <h1>
@@ -24,7 +24,7 @@
                 <label for="signinUsername">User name: </label>
                 <input type="text" id="signinUsername" name="username"><br>
                 <label for="signinPassword">Password: </label>
-                <input type="text" id="signinPassword" name="password"><br>
+                <input type="password" id="signinPassword" name="password"><br>
                 <a href="#" style="float:right; text-decoration: none;">Forgot Password?</a><br>
                 <br>
                 <center><input type="submit" value="Submit"><br></center>

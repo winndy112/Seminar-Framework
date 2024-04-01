@@ -1,0 +1,41 @@
+<!-- signin.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Handmade Forum Sign In Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>DEMO</h1>
+        </header>
+        <div class="signin-form-container" style="display: none;">
+            <!-- Sign in form -->
+            <form id="signinForm">
+                <button id="closeButton" class="close-button" style="display: block;">X</button> <!-- Nút thoát -->
+                <legend>
+                    <h1>
+                        <center>Sign in</center>
+                    </h1>
+                </legend>
+                <label for="signinUsername">User name: </label>
+                <input type="text" id="signinUsername" name="username"><br>
+                <label for="signinPassword">Password: </label>
+                <input type="text" id="signinPassword" name="password"><br>
+                <a href="#" style="float:right; text-decoration: none;">Forgot Password?</a><br>
+                <br>
+                <center><input type="submit" value="Submit"><br></center>
+            </form>
+            <center>
+                <p>Create a new account?</p>
+                <button id="sign-up-btn" class="btn">
+                    Sign up
+                </button>
+            </center>
+        </div>
+    </div>
+</body>
+</html>

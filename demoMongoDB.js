@@ -2,7 +2,7 @@ var express=require("express");
 var bodyParser=require("body-parser");
  
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/users');
+mongoose.connect('mongodb+srv://thuy:1@frameworkmongo.stvic0h.mongodb.net/users');
 var db=mongoose.connection;
 db.on('error', console.log.bind(console, "connection error"));
 db.once('open', function(callback){
@@ -43,8 +43,9 @@ app.post('/sign_in', function(req,res){
     var password = req.body.password;
  
     var data = {
-        "username": username,
+        "username": username
     }
+    console.log(username);
 
     db.collection('accounts').findOne(data,function(err, user){
         if (err) throw err;

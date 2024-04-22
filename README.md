@@ -50,7 +50,8 @@ npm i ejs
 npm run devStart
 ```
 ### MySQL Command Line client / MySQL Workbench
-Chạy lệnh `npm run demoMySQL` để chạy demo MySQL
+
+Chạy lệnh `npm run demoMySQL` để chạy demo MySQL (`npm install mysql2` nếu chưa tải module mysql cho node.js)
 
 1. Download installer từ link https://dev.mysql.com/downloads/installer/
 2. Chạy file `.msi` và chọn `Custom` type.

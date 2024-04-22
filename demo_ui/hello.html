@@ -1,18 +1,40 @@
 <!-- hello.ejs -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Message Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Page</title>
+    <script>
+        // Hàm này sẽ trích xuất thông tin fullname từ URL
+        function getFullNameFromURL() {
+            // Lấy URL hiện tại
+            var urlParams = new URLSearchParams(window.location.search);
+            // Trích xuất tham số fullname từ URL
+            var fullname = urlParams.get('fullname');
+            // Trả về giá trị fullname, hoặc chuỗi trống nếu không tìm thấy
+            return fullname || "";
+        }
+
+        // Hàm này sẽ hiển thị chào mừng với tên đầy đủ
+        function displayWelcomeMessage() {
+            var fullname = getFullNameFromURL();
+            var welcomeMessage = document.getElementById('welcomeMessage');
+            // Hiển thị chào mừng với tên đầy đủ nếu có
+            if (fullname) {
+                welcomeMessage.innerText = "Welcome, " + fullname;
+            }
+        }
+
+        // Gọi hàm displayWelcomeMessage khi trang đã được tải
+        window.onload = function() {
+            displayWelcomeMessage();
+        };
+    </script>
 </head>
 <body>
-    <h1 id="msg"></h1>
-    <script>
-        fetch("/sign_up")
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById("msg").innerText = data.message;
-            })
-            .catch(err => console.log(err));
-    </script>
+    <h1>Hello Page</h1>
+    <!-- Thẻ div này sẽ chứa thông báo chào mừng -->
+    <div id="welcomeMessage"></div>
 </body>
 </html>

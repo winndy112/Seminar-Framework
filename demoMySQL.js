@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 11000;
-const host = "192.168.8.214"
+const host = "127.0.0.1"
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 // using MySQL

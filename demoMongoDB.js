@@ -1,6 +1,9 @@
 var express=require("express");
 var bodyParser=require("body-parser");
- 
+
+var host = "127.0.0.1";
+var port = 11000;
+
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://thuy:1@frameworkmongo.stvic0h.mongodb.net/users');
 var db=mongoose.connection;
@@ -11,10 +14,15 @@ db.once('open', function(callback){
  
 var app=express();
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static('demo_ui'));
+app.use('/css', express.static(__dirname + '/demo_ui/css'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+app.get('/sign_up', (req, res) => {
+    res.sendFile(__dirname + "/demo_ui/signup.html");
+});
 
 app.post('/sign_up', function(req,res){
     var fullname = req.body.fullname;
@@ -33,10 +41,17 @@ app.post('/sign_up', function(req,res){
         if (err) throw err;
         console.log("Record inserted Successfully");      
     });
-         
-    return res.status(200).send("Signup successfully");
+    
+    res.status(200).send("Signup successfully");
+    return res.redirect('/sign_in');
 })
+app.get('/hello', (req, res) => {
+    res.sendFile(__dirname + "/demo_ui/hello.html");
+});
 
+app.get('/sign_in', (req, res) => {
+    res.sendFile(__dirname + "/demo_ui/signin.html");
+});
 
 app.post('/sign_in', function(req,res){
     var username =req.body.username;
@@ -55,14 +70,20 @@ app.post('/sign_in', function(req,res){
         }
         if ( user.password == password){
             console.log("Login successfully");
-            return res.status(200).send("Hello " + username);
+            return res.redirect(`/hello?fullname=${encodeURIComponent(username)}`);
         }
     });
 })
+
 
 app.get('/',function(req,res){
     res.set({
         'Access-control-Allow-Origin': '*'
     });
-    return res.redirect('demo_ui/signup.html');
-}).listen(3000)
+    
+    return res.sendFile(__dirname + "/demo_ui/signin.html");
+})
+
+app.listen(port, host, () => {
+    console.log(`Server is running on http://${host}:${port}`);
+});

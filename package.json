@@ -4,9 +4,9 @@
   "description": "**Nhóm thực hiện**: Nhóm 8 \r **Thành viên**:\r 1. Nguyễn Thị Quỳnh Anh (Nhóm trưởng)\r 2. Nguyễn Trần Lan Phương\r 3. Võ Đặng Phương Thùy",
   "main": "index.js",
   "scripts": {
-    "demoMongoDB": "node demoMongoDB.js",
-    "demoMySQL": "node demoMySQL.js",
-    "demoPostgreSQL": "node demoPostgreSQL.js"
+    "demoMongoDB": "nodemon demoMongoDB.js",
+    "demoMySQL": "nodemon demoMySQL.js",
+    "demoPostgreSQL": "nodemon demoPostgreSQL.js"
   },
   "keywords": [],
   "author": "",

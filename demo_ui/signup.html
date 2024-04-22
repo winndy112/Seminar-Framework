@@ -1,4 +1,4 @@
-<!-- signin.html -->
+<!-- signup.html -->
 <!DOCTYPE html>
 <html>
 
@@ -14,32 +14,30 @@
         <header>
             <h1>DEMO</h1>
         </header>
-        <div class="signin-form-container">
-            <!-- Sign in form -->
-            <form id="signinForm"></form>
-            <button id="closeButton" class="close-button" style="display: block;">X</button> <!-- Nút thoát -->
-            <!-- Các trường nhập liệu trong form -->
-            <legend>
-                <h1>
-                    <center>Sign up</center>
-                </h1>
-            </legend>
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname"><br>
-            <label for="signupEmail">Email: </label>
-            <input type="text" id="signupEmail" name="email"><br>
-            <label for="signupUsername">User name: </label>
-            <input type="text" id="signupUsername" name="username"><br>
-            <label for="signupPassword">Password: </label>
-            <input type="password" id="signupPassword" name="password"><br>
-            <br>
-            <center><input type="submit" value="Submit"><br></center>
+        <div class="signup-form-container">
+            <!-- Sign up form -->
+            <form id="signupForm" action="" method="post">
+                <button id="closeButton" class="close-button" style="display: block;">X</button> <!-- Nút thoát -->
+                <!-- Các trường nhập liệu trong form -->
+                <legend>
+                    <h1>
+                        <center>Sign up</center>
+                    </h1>
+                </legend>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname"><br>
+                <label for="signupEmail">Email: </label>
+                <input type="text" id="signupEmail" name="email"><br>
+                <label for="signupUsername">User name: </label>
+                <input type="text" id="signupUsername" name="username"><br>
+                <label for="signupPassword">Password: </label>
+                <input type="password" id="signupPassword" name="password"><br>
+                <br>
+                <center><input type="submit" value="Submit"><br></center>
             </form>
             <center>
                 <p>You already have an account?</p>
-                <button id="sign-in-btn" class="btn">
-                    Sign in
-                </button>
+                <a href="/sign_in"><button id="sign-in-btn" action="/sign_in" class="btn">Sign in</button></a>
             </center>
         </div>
     </div>

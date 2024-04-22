@@ -1,18 +1,18 @@
+<!-- hello.ejs -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Success</title>
+    <title>Message Page</title>
 </head>
 <body>
-    <h1 id="greeting"></h1>
-
+    <h1 id="msg"></h1>
     <script>
-        // Get the username from the login process
-        var username = "John"; // Replace with the actual username
-
-        // Display the greeting message
-        var greetingElement = document.getElementById("greeting");
-        greetingElement.textContent = "Hello " + username;
+        fetch("/sign_up")
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("msg").innerText = data.message;
+            })
+            .catch(err => console.log(err));
     </script>
 </body>
 </html>

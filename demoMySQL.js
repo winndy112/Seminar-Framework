@@ -44,12 +44,11 @@ app.post('/sign_up', (req, res) => {
             const query_2 = `INSERT INTO user_infor (user_id, fullname, email) VALUES (?, ?, ?)`;
             con.query(query_2, [userid, fullname, email], (err, results) => { 
             if (err) throw err;
-            res.send("Đăng kí thành công!");
+            
         } );
         });
-        
     });
-    return res.redirect('/sign_in')
+    return res.send("Đăng kí thành công!");
 });
 
 
@@ -81,6 +80,9 @@ app.post('/sign_in', (req, res) => {
         }
     });
    
+});
+app.get('/', (req, res) => {
+    res.redirect('/sign_up')
 });
 app.get('/hello', (req, res) => {
     res.sendFile(__dirname + "/demo_ui/hello.html");

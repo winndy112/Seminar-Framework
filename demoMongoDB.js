@@ -42,8 +42,8 @@ app.post('/sign_up', function(req,res){
         console.log("Record inserted Successfully");      
     });
     
-    res.status(200).send("Signup successfully");
-    return res.redirect('/sign_in');
+    return res.status(200).send("Signup successfully");
+    
 })
 app.get('/hello', (req, res) => {
     res.sendFile(__dirname + "/demo_ui/hello.html");

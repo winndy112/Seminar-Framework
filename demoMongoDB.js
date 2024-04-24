@@ -70,7 +70,7 @@ app.post('/sign_in', function(req,res){
         }
         if ( user.password == password){
             console.log("Login successfully");
-            return res.redirect(`/hello?fullname=${encodeURIComponent(username)}`);
+            return res.redirect(`/hello?fullname=${encodeURIComponent(user.fullname)}`);
         }
     });
 })
